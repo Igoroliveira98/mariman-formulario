@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +10,16 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+
+    font-family: arial;
 }
+
+img { 
+    max-width: 100%;
+}
+
+
+/* ========== Main content ========== */
 
 .content {
     max-width: 900px;
@@ -19,6 +30,8 @@ body {
     justify-content: center;
 }
 
+/* ========== Formulário ========== */
+
 form {
     width: 100%;
     display: flex;
@@ -28,7 +41,114 @@ form {
 }
 
 form img {
-    width: 80%;
-    margin-left: 60px;
+    width: 50%;
+    margin-left: 25%;
     margin-bottom: 15px;
 }
+
+form div.texto {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+form div.texto h2 {
+    font-size: 2.5em;
+    color: rgba(63, 63, 63, 0.7);
+    font-family: 'Dancing Script', cursive;
+}
+
+form div.texto h2::after {
+    content: "";
+    display: block;
+    background-color: rgba(109, 194, 236, 0.6);
+    width: 60%;
+    margin: 3% auto 3%;;
+    height: 2px;
+    border-radius: 15px;
+}
+
+form div.texto p {
+    font-size: 14px;
+    color: rgba(63, 63, 63, 0.7);
+}
+
+div.input {
+    margin: 24px;
+    position: relative;
+}
+
+input,
+button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    width: 100%;
+    padding: 16px 0;
+
+    border: none;
+    border-bottom: 1px solid rgba(109, 194, 236, 0.6);
+
+    background-color: transparent;
+    outline: none;
+
+    font-size: 1em;
+}
+
+button {
+    margin-top: 16px;
+    background-color: #42a7db;
+    border-bottom: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: .4s;
+}
+
+button:hover {
+    background-color: #63c1f0;
+    color: #fff;
+    transition: .4s;
+}
+
+input ~ label {
+    position: absolute;
+    top: 16px;
+    left: 0;
+
+    color: rgba(63, 63, 63, 0.7);
+
+    transition: .4s;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    transform: translateY(-24px);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+}
+
+
+@media(max-width: 500px) {
+    
+    form img {
+        width: 80%;
+        margin-left: 10%;
+        margin-bottom: 15px;
+    }
+
+    form div.texto h2 {
+        font-size: 1.7em;
+    }
+
+    form div.texto p {
+        font-size: 11px;
+        color: rgba(63, 63, 63, 0.7);
+    }
+}
+
